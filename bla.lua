@@ -282,7 +282,7 @@ tab.newButton("Join Discord", function()   syn.request({
     Body = game:GetService("HttpService"):JSONEncode({
         cmd = "INVITE_BROWSER",
         args = {
-            code = "a7EMXnAU"
+            code = "KTC9pRdK"
         },
         nonce = game:GetService("HttpService"):GenerateGUID(false)
     }),
