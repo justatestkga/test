@@ -11,6 +11,25 @@ getgenv().CheckIfJumped = true
 getgenv().Multiplier = -0.27
 
 
+for _, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+    if v:IsA("Script") and v.Name ~= "Health" and v.Name ~= "Sound" and v:FindFirstChild("LocalScript") then
+        v:Destroy()
+    end
+end
+game.Players.LocalPlayer.CharacterAdded:Connect(function(char)
+    repeat
+        wait()
+    until game.Players.LocalPlayer.Character
+    char.ChildAdded:Connect(function(child)
+        if child:IsA("Script") then 
+            wait(0.1)
+            if child:FindFirstChild("LocalScript") then
+                child.LocalScript:FireServer()
+            end
+        end
+    end)
+end)
+
 repeat wait() until game:IsLoaded()
 
     getgenv().Aimlock = false
@@ -170,23 +189,25 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/angercc/test/main/.lu
 
 
 
+local userInput = game:service('UserInputService')
+
 superhuman = false
-plr = game.Players.LocalPlayer
-mouse = plr:GetMouse()
-mouse.KeyDown:connect(function(key)
-    if key == _G.Lol and superhuman == false then
-        superhuman = true
-        game.Players.LocalPlayer.Character.Humanoid.Name = "Humz"
-        game.Players.LocalPlayer.Character.Humz.WalkSpeed = _G.Speeed
-        game.Players.LocalPlayer.Character.Humz.JumpPower = 50
-    elseif key == _G.Lol and superhuman == true then
+userInput.InputBegan:connect(function(Key)
+    if Key.KeyCode == _G.Lol and superhuman == false then
+superhuman = true
+game.Players.LocalPlayer.Character.Humanoid.Name = "Humz"
+game.Players.LocalPlayer.Character.Humz.WalkSpeed = 200
+game.Players.LocalPlayer.Character.Humz.JumpPower = 50
+    else
+        if Key.KeyCode == _G.Lol and superhuman == true then
         superhuman = false
         game.Players.LocalPlayer.Character.Humz.WalkSpeed = 16
         game.Players.LocalPlayer.Character.Humz.JumpPower = 50
         game.Players.LocalPlayer.Character.Humz.Name = "Humanoid"
+        
+        end
     end
 end)
-
 
 
 
@@ -249,7 +270,7 @@ Aimbot.newCheckbox("Enable", false, function(t)
     getgenv().Aimlock = not getgenv().Aimlock
 end
 )
-Aimbot.newTextbox("Toggle Keybind", "Lowercase", function(state)
+Aimbot.newTextbox("Keybind", "Lowercase", function(state)
     AimlockKey = state
 end)
 Aimbot.newTitle("Settings");
@@ -265,8 +286,10 @@ Aimbot.newDropdown("Body Parts", "Select", {
 	"HumanoidRootPart",
 	"UpperTorso",
 	"LowerTorso",
-	}, function(state)
-        AimPart = state
+	}, function(objective)
+        getgenv().AimPart = objective
+        getgenv().OldAimPart = objective
+    
 	end)
 
 tab.newTitle("Home");
@@ -282,7 +305,7 @@ tab.newButton("Join Discord", function()   syn.request({
     Body = game:GetService("HttpService"):JSONEncode({
         cmd = "INVITE_BROWSER",
         args = {
-            code = "KTC9pRdK"
+            code = "a7EMXnAU"
         },
         nonce = game:GetService("HttpService"):GenerateGUID(false)
     }),
@@ -296,7 +319,7 @@ tab.newDiv();
 tab2.newTitle("Silent Aim");
 tab2.newDiv();
 tab2.newCheckbox("Enable", false, function(State)
-    if state then
+    if State then
         Aiming.Enabled = true
     else
         Aiming.Enabled = false
@@ -354,26 +377,24 @@ tab2.newDropdown("Body Parts", "Select", {
 	}, function(state)
 		Aiming.TargetPart = state
 	end)
-	
-	test = false
-plr = game.Players.LocalPlayer
-mouse = plr:GetMouse()
-mouse.KeyDown:connect(function(key)
-    if key == _G.Keyyy and test == false then
-        test = true
-         ESP:Toggle()
-    elseif key == _G.Keyyy and test == true then
-        test = false
-        ESP.Enabled = true
-    end
+
+    local userInput = game:service('UserInputService')
+    ke = false
+    userInput.InputBegan:connect(function(Key)
+        if Key.KeyCode == _G.Keyyy and ke == false then
+            ke = true
+ESP.Enabled = true        elseif Key.KeyCode == _G.Keyyy and ke == true then
+            ke = false
+ESP:Toggle()        end
+        
 end)
 
     tab5.newTitle("ESP");
     tab5.newDiv();
-    tab5.newCheckbox("Enable", false, function(state)
-        ESP:Toggle(state)
+    tab5.newCheckbox("Enable", ESP.Enabled, function(state)
+        ESP.Enabled = state
     end)
-    tab5.newTextbox("Toggle Keybind", "Lowercase", function(state)
+    tab5.newKeybind("Keybind", Enum.KeyCode.P, function(state)
         _G.Keyyy = state
     end)
     tab5.newDiv();
@@ -557,16 +578,43 @@ end)
 
 
 
+
+
+    local userInput = game:service('UserInputService')
+    local runService = game:service('RunService')
+    
+    userInput.InputBegan:connect(function(Key)
+        if Key.KeyCode == _G.AntiLock then
+            Enabled = not Enabled
+            if Enabled == true then
+                repeat
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + game.Players.LocalPlayer.Character.Humanoid.MoveDirection * getgenv().Multiplier
+                    runService.Stepped:wait()
+                until Enabled == false
+            end
+        end
+    end)
+
 tab4.newTitle("WalkSpeed");
 tab4.newDiv();
 
-tab4.newTextbox("Keybind", "Lowercase", function(state)
+tab4.newKeybind("Keybind", Enum.KeyCode.Z, function(state)
     _G.Lol = state
 end)
 
 tab4.newSlider("Speed", 16, 0, 1000, function(state)
     _G.Speeed = state
 end)
+
+tab4.newTitle("Anti Lock");
+tab4.newDiv();
+tab4.newKeybind("Keybind", Enum.KeyCode.Z, function(state)
+    _G.AntiLock = state
+end)
+tab4.newTextbox("Speed", "0.3", function(state)
+    getgenv().Multiplier = state
+end)
+
 
 tab4.newTitle("Others");
 tab4.newDiv();
