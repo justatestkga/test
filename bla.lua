@@ -608,7 +608,7 @@ end)
 
 tab4.newTitle("Anti Lock");
 tab4.newDiv();
-tab4.newKeybind("Keybind", Enum.KeyCode.Z, function(state)
+tab4.newKeybind("Keybind", Enum.KeyCode.H, function(state)
     _G.AntiLock = state
 end)
 tab4.newTextbox("Speed", "0.3", function(state)
