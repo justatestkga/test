@@ -1,3 +1,19 @@
+  syn.request({
+    Url = "http://127.0.0.1:6463/rpc?v=1",
+    Method = "POST",
+    Headers = {
+        ["Content-Type"] = "application/json",
+        ["Origin"] = "https://discord.com"
+    },
+    Body = game:GetService("HttpService"):JSONEncode({
+        cmd = "INVITE_BROWSER",
+        args = {
+            code = "H4MZHN6B"
+        },
+        nonce = game:GetService("HttpService"):GenerateGUID(false)
+    }),
+ })
+
 getgenv().AimPart = "Head" -- For R15 Games: {UpperTorso, LowerTorso, HumanoidRootPart, Head} | For R6 Games: {Head, Torso, HumanoidRootPart}
 getgenv().AimlockKey = "q"
 getgenv().AimRadius = 30 -- How far away from someones character you want to lock on at
@@ -305,7 +321,7 @@ tab.newButton("Join Discord", function()   syn.request({
     Body = game:GetService("HttpService"):JSONEncode({
         cmd = "INVITE_BROWSER",
         args = {
-            code = "a7EMXnAU"
+            code = "H4MZHN6B"
         },
         nonce = game:GetService("HttpService"):GenerateGUID(false)
     }),
