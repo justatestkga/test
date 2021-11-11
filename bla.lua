@@ -587,7 +587,7 @@ mouse.KeyDown:connect(function(key)
         if Enabled == true then
             repeat
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + game.Players.LocalPlayer.Character.Humanoid.MoveDirection * getgenv().Multiplier
-                runService.Stepped:wait()
+                plr.Stepped:wait()
             until Enabled == false
         end
     end
