@@ -580,6 +580,8 @@ ESP:Toggle()
 
 local plr = game.Players.LocalPlayer
 local mouse = plr:GetMouse()
+local runService = game:service('RunService')
+
 
 mouse.KeyDown:connect(function(key)
     if key == _G.AntiLock then
@@ -587,7 +589,7 @@ mouse.KeyDown:connect(function(key)
         if Enabled == true then
             repeat
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + game.Players.LocalPlayer.Character.Humanoid.MoveDirection * getgenv().Multiplier
-                plr.Stepped:wait()
+                runService.Stepped:wait()
             until Enabled == false
         end
     end
