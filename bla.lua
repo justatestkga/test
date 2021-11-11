@@ -196,7 +196,7 @@ userInput.InputBegan:connect(function(Key)
     if Key.KeyCode == _G.Lol and superhuman == false then
 superhuman = true
 game.Players.LocalPlayer.Character.Humanoid.Name = "Humz"
-game.Players.LocalPlayer.Character.Humz.WalkSpeed = 200
+game.Players.LocalPlayer.Character.Humz.WalkSpeed = _G.Speeed
 game.Players.LocalPlayer.Character.Humz.JumpPower = 50
     else
         if Key.KeyCode == _G.Lol and superhuman == true then
