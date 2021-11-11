@@ -582,7 +582,7 @@ local plr = game.Players.LocalPlayer
 local mouse = plr:GetMouse()
 
 mouse.KeyDown:connect(function(key)
-    if Key == _G.AntiLock then
+    if key == _G.AntiLock then
         Enabled = not Enabled
         if Enabled == true then
             repeat
