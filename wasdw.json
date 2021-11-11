@@ -5,7 +5,7 @@
     ],
     "StatusData": {
         "Headshot": "Online",
-        "Launcher": "Online",
+        "Launcher": "Offline",
         "Universal": "Online"
     },
     "LatestVersion": "https://raw.githubusercontent.com/justatestkga/test/main/bla.lua",
