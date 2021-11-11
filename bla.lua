@@ -392,7 +392,7 @@ ESP:Toggle()
     tab5.newCheckbox("Enable", ESP.Enabled, function(state)
         ESP.Enabled = state
     end)
-    tab4.newTextbox("Keybind", "Lowercase", function(state)
+    tab5.newTextbox("Keybind", "Lowercase", function(state)
         _G.Keyyy = state
     end)
     tab5.newDiv();
