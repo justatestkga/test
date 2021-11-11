@@ -1,19 +1,3 @@
-  syn.request({
-    Url = "http://127.0.0.1:6463/rpc?v=1",
-    Method = "POST",
-    Headers = {
-        ["Content-Type"] = "application/json",
-        ["Origin"] = "https://discord.com"
-    },
-    Body = game:GetService("HttpService"):JSONEncode({
-        cmd = "INVITE_BROWSER",
-        args = {
-            code = "H4MZHN6B"
-        },
-        nonce = game:GetService("HttpService"):GenerateGUID(false)
-    }),
- })
-
 getgenv().AimPart = "Head" -- For R15 Games: {UpperTorso, LowerTorso, HumanoidRootPart, Head} | For R6 Games: {Head, Torso, HumanoidRootPart}
 getgenv().AimlockKey = "q"
 getgenv().AimRadius = 30 -- How far away from someones character you want to lock on at
@@ -205,26 +189,22 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/angercc/test/main/.lu
 
 
 
-local userInput = game:service('UserInputService')
-
 superhuman = false
-userInput.InputBegan:connect(function(Key)
-    if Key.KeyCode == _G.Lol and superhuman == false then
-superhuman = true
-game.Players.LocalPlayer.Character.Humanoid.Name = "Humz"
-game.Players.LocalPlayer.Character.Humz.WalkSpeed = _G.Speeed
-game.Players.LocalPlayer.Character.Humz.JumpPower = 50
-    else
-        if Key.KeyCode == _G.Lol and superhuman == true then
-        superhuman = false
-        game.Players.LocalPlayer.Character.Humz.WalkSpeed = 16
-        game.Players.LocalPlayer.Character.Humz.JumpPower = 50
-        game.Players.LocalPlayer.Character.Humz.Name = "Humanoid"
-        
-        end
-    end
-end)
-
+	plr = game.Players.LocalPlayer
+	mouse = plr:GetMouse()
+	mouse.KeyDown:connect(function(key)
+		if key == _G.Lol and superhuman == false then
+			superhuman = true
+			game.Players.LocalPlayer.Character.Humanoid.Name = "Humz"
+			game.Players.LocalPlayer.Character.Humz.WalkSpeed = _G.Speeed
+			game.Players.LocalPlayer.Character.Humz.JumpPower = 50
+		elseif key == _G.Lol and superhuman == true then
+			superhuman = false
+			game.Players.LocalPlayer.Character.Humz.WalkSpeed = 16
+			game.Players.LocalPlayer.Character.Humz.JumpPower = 50
+			game.Players.LocalPlayer.Character.Humz.Name = "Humanoid"
+		end
+	end)
 
 
 
@@ -321,7 +301,7 @@ tab.newButton("Join Discord", function()   syn.request({
     Body = game:GetService("HttpService"):JSONEncode({
         cmd = "INVITE_BROWSER",
         args = {
-            code = "H4MZHN6B"
+            code = "a7EMXnAU"
         },
         nonce = game:GetService("HttpService"):GenerateGUID(false)
     }),
@@ -394,23 +374,25 @@ tab2.newDropdown("Body Parts", "Select", {
 		Aiming.TargetPart = state
 	end)
 
-    local userInput = game:service('UserInputService')
-    ke = false
-    userInput.InputBegan:connect(function(Key)
-        if Key.KeyCode == _G.Keyyy and ke == false then
-            ke = true
-ESP.Enabled = true        elseif Key.KeyCode == _G.Keyyy and ke == true then
-            ke = false
-ESP:Toggle()        end
-        
-end)
+    bruh = false
+	plr = game.Players.LocalPlayer
+	mouse = plr:GetMouse()
+	mouse.KeyDown:connect(function(key)
+		if key == _G.Keyyy and bruh == false then
+			bruh = true
+			ESP.Enabed = true
+		elseif key == _G.Keyyy and bruh == true then
+			bruh = false
+ESP:Toggle()
+		end
+	end)
 
     tab5.newTitle("ESP");
     tab5.newDiv();
     tab5.newCheckbox("Enable", ESP.Enabled, function(state)
         ESP.Enabled = state
     end)
-    tab5.newKeybind("Keybind", Enum.KeyCode.P, function(state)
+    tab4.newTextbox("Keybind", "Lowercase", function(state)
         _G.Keyyy = state
     end)
     tab5.newDiv();
@@ -614,7 +596,7 @@ end)
 tab4.newTitle("WalkSpeed");
 tab4.newDiv();
 
-tab4.newKeybind("Keybind", Enum.KeyCode.Z, function(state)
+tab4.newTextbox("Keybind", "Lowercase", function(state)
     _G.Lol = state
 end)
 
@@ -624,7 +606,7 @@ end)
 
 tab4.newTitle("Anti Lock");
 tab4.newDiv();
-tab4.newKeybind("Keybind", Enum.KeyCode.H, function(state)
+tab4.newTextbox("Keybind", "Lowercase", function(state)
     _G.AntiLock = state
 end)
 tab4.newTextbox("Speed", "0.3", function(state)
