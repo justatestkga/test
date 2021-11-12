@@ -578,22 +578,36 @@ ESP:Toggle()
 
 
 
-local plr = game.Players.LocalPlayer
-local mouse = plr:GetMouse()
-local runService = game:service('RunService')
-
-
-mouse.KeyDown:connect(function(key)
-    if key == _G.AntiLock then
-        Enabled = not Enabled
-        if Enabled == true then
-            repeat
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + game.Players.LocalPlayer.Character.Humanoid.MoveDirection * getgenv().Multiplier
-                runService.Stepped:wait()
-            until Enabled == false
+    local userInput = game:service('UserInputService')
+    local runService = game:service('RunService')
+    
+    userInput.InputBegan:connect(function(Key)
+        if Key.KeyCode == _G.AntiLock then
+            Enabled = not Enabled
+            if Enabled == true then
+                repeat
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + game.Players.LocalPlayer.Character.Humanoid.MoveDirection * getgenv().Multiplier
+                    runService.Stepped:wait()
+                until Enabled == false
+            end
         end
-    end
-end)
+    end)
+
+    local userInput = game:service('UserInputService')
+    
+    userInput.InputBegan:connect(function(Key)
+				if Key.KeyCode == _G.Lowerr then
+					Clicking = not Clicking
+					if Clicking == true then
+						repeat
+							mouse1click()
+							wait(0.001)
+						until Clicking == false
+					end
+				end
+			end)
+
+
 
 tab4.newTitle("WalkSpeed");
 tab4.newDiv();
@@ -616,11 +630,15 @@ tab4.newTextbox("Speed", "0.3", function(state)
 end)
 
 
+
 tab4.newTitle("Others");
 tab4.newDiv();
 tab4.newSlider("FOV", 70, 0, 120, function(state)
     game.Workspace.Camera.FieldOfView = state
 
+end)
+tab4.newKeybind("Auto Clicker", Enum.KeyCode.T, function(state)
+    _G.Lowerr = state
 end)
 
 
