@@ -290,7 +290,7 @@ Aimbot.newDropdown("Body Parts", "Select", {
 
 tab.newTitle("Home");
 tab.newDiv();
-tab.newDesc("Thank you for choosing Headshot.me. Join the server!");
+tab.newDesc("Thank you for choosing Headshot.me! This hub is still in development");
 tab.newButton("Join Discord", function()   syn.request({
     Url = "http://127.0.0.1:6463/rpc?v=1",
     Method = "POST",
