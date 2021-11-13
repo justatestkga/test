@@ -1,6 +1,6 @@
 {
     "NewsData": [
-        [1, "Headshot.me is now live."],
+        [1, "Headshot.me is now only for users that has boosted the server."],
         [1, "@DIVIDER"]
     ],
     "StatusData": {
@@ -8,7 +8,7 @@
         "Launcher": "Offline",
         "Universal": "Online"
     },
-    "LatestVersion": "https://raw.githubusercontent.com/justatestkga/test/main/bla.lua",
+    "LatestVersion": "",
     "Themes": {
         "Default": {
             "ThemeIndex": 1,
