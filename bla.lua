@@ -577,12 +577,10 @@ ESP:Toggle()
 
 
 
-
-    local userInput = game:service('UserInputService')
-    local runService = game:service('RunService')
-    
-    userInput.InputBegan:connect(function(Key)
-        if Key.KeyCode == _G.AntiLock then
+	plr = game.Players.LocalPlayer
+	mouse = plr:GetMouse()
+	mouse.KeyDown:connect(function(key)
+        if key == _G.AntiLock then
             Enabled = not Enabled
             if Enabled == true then
                 repeat
