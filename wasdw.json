@@ -2,8 +2,8 @@
     "NewsData": [
         [1, "Headshot.me is now live for limited users."],
         [1, "@DIVIDER"]
-                        [1, "Make sure to boost the server to use this!"],
-        [1, "@DIVIDER"]
+                        [2, "Make sure to boost the server to use this!"],
+        [2, "@DIVIDER"]
     ],
     "StatusData": {
         "Headshot": "Online",
