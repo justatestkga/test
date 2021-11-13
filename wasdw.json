@@ -1,6 +1,6 @@
 {
     "NewsData": [
-        [1, "Thanks for choosing Headshot.me!"],
+        [1, "Headshot.me is now live for limited users."],
         [1, "@DIVIDER"]
     ],
     "StatusData": {
@@ -10,15 +10,15 @@
     },
     "LatestVersion": "https://raw.githubusercontent.com/justatestkga/test/main/bla.lua",
     "Themes": {
-        "Default": {
-            "ThemeIndex": 2,
+        "Dark": {
+            "ThemeIndex": 1,
             "Primary": [25, 25, 25],
             "Secondary": [30, 30, 30],
             "Tertiary": [35, 35, 35],
             "Quaternary": [40, 40, 40]
         },
         "Blue": {
-            "ThemeIndex": 1,
+            "ThemeIndex": 2,
             "Primary": [41, 53, 68],
             "Secondary": [35, 47, 62],
             "Tertiary": [28, 41, 56],
