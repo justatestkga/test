@@ -1,9 +1,10 @@
 {
     "NewsData": [
-        [1, "Headshot.me is now live for limited users."],
+        [1, "Thanks for choosing Headshot.me!"],
         [1, "@DIVIDER"]
-                [2, "Headshot.me is now live for limited users."],
+                [2, "Server Boosters get a better UI than others."],
         [2, "@DIVIDER"]
+
 
     ],
     "StatusData": {
@@ -11,7 +12,7 @@
         "Launcher": "Offline",
         "Universal": "Online"
     },
-    "LatestVersion": "",
+    "LatestVersion": "https://raw.githubusercontent.com/justatestkga/test/main/bla.lua",
     "Themes": {
         "Default": {
             "ThemeIndex": 1,
