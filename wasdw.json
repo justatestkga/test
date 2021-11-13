@@ -1,9 +1,8 @@
 {
     "NewsData": [
-        [1, "Version 5.6: Boosters get a better UI than others."],
+        [1, "Server Boosters now get a better UI than others."],
         [1, "@DIVIDER"]
-                [2, "Version 5.6: Boosters get a better UI than others."],
-        [2, "@DIVIDER"]
+
     ],
     "StatusData": {
         "Headshot": "Online",
