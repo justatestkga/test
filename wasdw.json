@@ -1,6 +1,6 @@
 {
     "NewsData": [
-        [1, "Headshot.me is now live for limited users."],
+        [1, "Version 5.6: Boosters get a better UI than others."],
         [1, "@DIVIDER"]
     ],
     "StatusData": {
@@ -10,7 +10,7 @@
     },
     "LatestVersion": "https://raw.githubusercontent.com/justatestkga/test/main/bla.lua",
     "Themes": {
-        "Dark": {
+        "Default": {
             "ThemeIndex": 1,
             "Primary": [25, 25, 25],
             "Secondary": [30, 30, 30],
