@@ -14,19 +14,19 @@
     },
     "LatestVersion": "",
     "Themes": {
-        "Default": {
-            "ThemeIndex": 1,
-            "Primary": [41, 53, 68],
-            "Secondary": [35, 47, 62],
-            "Tertiary": [28, 41, 56],
-            "Quaternary": [18, 98, 159]
-        },
         "Dark": {
-            "ThemeIndex": 2,
+            "ThemeIndex": 1,
             "Primary": [25, 25, 25],
             "Secondary": [30, 30, 30],
             "Tertiary": [35, 35, 35],
             "Quaternary": [40, 40, 40]
+        },
+        "Blue": {
+            "ThemeIndex": 2,
+            "Primary": [41, 53, 68],
+            "Secondary": [35, 47, 62],
+            "Tertiary": [28, 41, 56],
+            "Quaternary": [18, 98, 159]
         },
         "Black and Red": {
             "ThemeIndex": 3,
