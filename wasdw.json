@@ -4,8 +4,8 @@
         [1, "@DIVIDER"]
                 [2, "If you want to use it, boost the server"],
         [2, "@DIVIDER"]
-                        [2, "https://discord.gg/dwan69Fs"],
-        [2, "@DIVIDER"]
+                        [3, "https://discord.gg/dwan69Fs"],
+        [3, "@DIVIDER"]
     ],
     "StatusData": {
         "Headshot": "Online",
