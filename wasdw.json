@@ -2,6 +2,8 @@
     "NewsData": [
         [1, "Headshot.me is now live for limited users."],
         [1, "@DIVIDER"]
+                [2, "Headshot.me is now live for limited users."],
+        [2, "@DIVIDER"]
 
     ],
     "StatusData": {
