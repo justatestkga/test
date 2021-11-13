@@ -14,7 +14,7 @@
     },
     "LatestVersion": "",
     "Themes": {
-        "Dark": {
+        "Default": {
             "ThemeIndex": 1,
             "Primary": [25, 25, 25],
             "Secondary": [30, 30, 30],
