@@ -220,6 +220,8 @@ local tab4 = mainGUI.newTab("Extras");
 
 
 
+
+
 gv = false
 plr = game.Players.LocalPlayer
 mouse = plr:GetMouse()
@@ -639,5 +641,30 @@ tab4.newKeybind("Auto Clicker", Enum.KeyCode.T, function(state)
     _G.Lowerr = state
 end)
 
+tab4.newTitle("Accessories");
+tab4.newDiv();
+
+
+tab4.newButton("Headless", function()
+    game.Players.LocalPlayer.Character.Head.Transparency = 1
+    for i,v in pairs(game.Players.LocalPlayer.Character.Head:GetChildren()) do
+    if (v:IsA("Decal")) then
+    v:Destroy()
+    end
+    end
+    end)
+    
+    tab4.newButton("Right Korblox", function()
+        local ply = game.Players.LocalPlayer
+        local chr = ply.Character
+        chr.RightLowerLeg.MeshId = "902942093"
+        chr.RightLowerLeg.Transparency = "1"
+        chr.RightUpperLeg.MeshId = "http://www.roblox.com/asset/?id=902942096"
+        chr.RightUpperLeg.TextureID = "http://roblox.com/asset/?id=902843398"
+        chr.RightFoot.MeshId = "902942089"
+        chr.RightFoot.Transparency = "1"
+    end)
+
 
 mainGUI.openTab(tab);
+
