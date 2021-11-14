@@ -189,21 +189,21 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/angercc/test/main/.lu
 
 
 
-superhuman = false
-	plr = game.Players.LocalPlayer
-	mouse = plr:GetMouse()
-	mouse.KeyDown:connect(function(key)
-		if key == _G.Lol and superhuman == false then
-			superhuman = true
-			game.Players.LocalPlayer.Character.Humanoid.Name = "Humz"
-			game.Players.LocalPlayer.Character.Humz.WalkSpeed = _G.Speeed
+
+    superhuman = false
+game:GetService("UserInputService").InputBegan:connect(function(inputObject, gameprocess)
+	    if (inputObject.KeyCode == _G.Lol) and (not gameprocess) and superhuman == false then
+	        superhuman = true
+	        			game.Players.LocalPlayer.Character.Humanoid.Name = "Humz"
+			game.Players.LocalPlayer.Character.Humz.WalkSpeed = 200
 			game.Players.LocalPlayer.Character.Humz.JumpPower = 50
-		elseif key == _G.Lol and superhuman == true then
-			superhuman = false
+	    else
+	        	    if (inputObject.KeyCode == _G.Lol) and (not gameprocess) and superhuman == true then
+superhuman = false
 			game.Players.LocalPlayer.Character.Humz.WalkSpeed = 16
 			game.Players.LocalPlayer.Character.Humz.JumpPower = 50
-			game.Players.LocalPlayer.Character.Humz.Name = "Humanoid"
-		end
+			game.Players.LocalPlayer.Character.Humz.Name = "Humanoid"	
+			end end
 	end)
 
 
@@ -219,28 +219,37 @@ local shop = mainGUI.newTab("Animations");
 local tab4 = mainGUI.newTab("Extras");
 
 
-
-
-
 gv = false
-plr = game.Players.LocalPlayer
-mouse = plr:GetMouse()
-mouse.KeyDown:connect(function(key)
-    if key == _G.nigger and  gv == false then
-        gv = true
+game:GetService("UserInputService").InputBegan:connect(function(inputObject, gameprocess)
+	    if (inputObject.KeyCode == _G.nigger) and (not gameprocess) and gv == false then
+	        gv = true
 
+            Aiming.Enabled = false
 
-        Aiming.Enabled = false
+            ezlib.newNotif(ezlib.enum.notifType.text, "Silent Aim: Off").play(.7).delete(.7);
+	    else
+	        	    if (inputObject.KeyCode == _G.nigger) and (not gameprocess) and gv == true then
+                        gv = false
+                        Aiming.Enabled = true
+                        ezlib.newNotif(ezlib.enum.notifType.text, "Silent Aim: On").play(.7).delete(.7);
+			end end
+	end)
 
-        ezlib.newNotif(ezlib.enum.notifType.text, "Silent Aim: Off").play(.7).delete(.7);
+    lol = false
+    game:GetService("UserInputService").InputBegan:connect(function(inputObject, gameprocess)
+            if (inputObject.KeyCode == _G.nigger) and (not gameprocess) and lol == false then
+                lol = true
+    
+                Aiming.Enabled = false
+    
+            else
+                        if (inputObject.KeyCode == _G.nigger) and (not gameprocess) and lol == true then
+                            lol = false
+                            Aiming.Enabled = true
+                end end
+        end)
+    
 
-    elseif key == _G.nigger and gv == true then
-        gv = false
-        Aiming.Enabled = true
-        ezlib.newNotif(ezlib.enum.notifType.text, "Silent Aim: On").play(.7).delete(.7);
-
-    end
-end)
 
 
 lol = false
@@ -324,10 +333,12 @@ tab2.newCheckbox("Enable", false, function(State)
     end
 end)
 
-tab2.newTextbox("Notification Toggle", "Lowercase", function(state)
+tab2.newTitle("Keybind Toggles");
+tab2.newDiv();
+tab2.newKeybind("Notification", Enum.KeyCode.B, function(state)
     _G.nigger = state
 end)
-tab2.newTextbox("No Notification", "Lowercase", function(state)
+tab2.newKeybind("No Notification", Enum.KeyCode.J, function(state)
     _G.Shitkid = state
 end)
 tab2.newTitle("Customize");
@@ -389,12 +400,14 @@ ESP:Toggle()
 		end
 	end)
 
+
+
     tab5.newTitle("ESP");
     tab5.newDiv();
     tab5.newCheckbox("Enable", ESP.Enabled, function(state)
         ESP.Enabled = state
     end)
-    tab5.newTextbox("Keybind", "Lowercase", function(state)
+    tab5.newKeybind("Keybind", Enum.KeyCode.P, function(state)
         _G.Keyyy = state
     end)
     tab5.newDiv();
@@ -579,10 +592,9 @@ ESP:Toggle()
 
     local runService = game:service('RunService')
 
-	plr = game.Players.LocalPlayer
-	mouse = plr:GetMouse()
-	mouse.KeyDown:connect(function(key)
-        if key == _G.AntiLock then
+    game:GetService("UserInputService").InputBegan:connect(function(inputObject, gameprocess)
+
+	    if (inputObject.KeyCode == _G.AntiLock) and (not gameprocess) then
             Enabled = not Enabled
             if Enabled == true then
                 repeat
@@ -593,10 +605,10 @@ ESP:Toggle()
         end
     end)
 
-    local userInput = game:service('UserInputService')
-    
-    userInput.InputBegan:connect(function(Key)
-				if Key.KeyCode == _G.Lowerr then
+
+    game:GetService("UserInputService").InputBegan:connect(function(inputObject, gameprocess)
+
+	    if (inputObject.KeyCode == _G.Lowerr) and (not gameprocess) then
 					Clicking = not Clicking
 					if Clicking == true then
 						repeat
@@ -612,7 +624,7 @@ ESP:Toggle()
 tab4.newTitle("WalkSpeed");
 tab4.newDiv();
 
-tab4.newTextbox("Keybind", "Lowercase", function(state)
+tab4.newKeybind("Keybind", Enum.KeyCode.Z, function(state)
     _G.Lol = state
 end)
 
@@ -622,7 +634,7 @@ end)
 
 tab4.newTitle("Anti Lock");
 tab4.newDiv();
-tab4.newTextbox("Keybind", "Lowercase", function(state)
+tab4.newKeybind("Keybind", Enum.KeyCode.H, function(state)
     _G.AntiLock = state
 end)
 tab4.newTextbox("Speed", "0.3", function(state)
@@ -667,4 +679,3 @@ tab4.newButton("Headless", function()
 
 
 mainGUI.openTab(tab);
-
