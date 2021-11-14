@@ -210,7 +210,7 @@ superhuman = false
 
 local ezlib = loadstring(game:HttpGet("https://pastebin.com/raw/2Fh9FL8c"))();
 local ESP = loadstring(game:HttpGet("https://pastebin.com/raw/UCjGbGQ9"))()
-local mainGUI = ezlib.create("Headshot.me");
+local mainGUI = ezlib.create("anger.cc");
 local tab = mainGUI.newTab("Home");
 local Aimbot = mainGUI.newTab("Aimbot");
 local tab2 = mainGUI.newTab("Silent Aim");
