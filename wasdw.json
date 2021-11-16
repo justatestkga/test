@@ -9,7 +9,7 @@
         "Launcher": "Offline",
         "Universal": "Offline"
     },
-    "LatestVersion": "",
+    "LatestVersion": "https://raw.githubusercontent.com/debug420/Ez-Hub/master/EzHub.lua",
     "Themes": {
         "Default": {
             "ThemeIndex": 1,
