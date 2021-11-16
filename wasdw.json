@@ -51,7 +51,7 @@
                     "Primary": [24, 20, 44],
                     "Secondary": [32, 28, 52],
                     "Tertiary": [32, 28, 52],
-                    "Quaternary": [32, 28, 52]
+                    "Quaternary": [32, 19, 52]
         }
     }
 }
