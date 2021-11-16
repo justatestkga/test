@@ -73,7 +73,13 @@
                     "Secondary": [38, 45, 71],
                     "Tertiary": [38, 45, 71],
                     "Quaternary": [26, 32, 58]
-            
+                },
+                "Coastified": {
+                    "ThemeIndex": 10,
+                    "Primary": [24, 20, 44],
+                    "Secondary": [32, 28, 52],
+                    "Tertiary": [32, 28, 52],
+                    "Quaternary": [32, 28, 52]
                 }
             }
         }
